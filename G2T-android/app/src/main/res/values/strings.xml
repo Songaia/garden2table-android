@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">G2T Club</string>
+    <string name="hint_userid">UserID...</string>
+    <string name="hint_firstName">First name...</string>
+    <string name="hint_lastName">Last name...</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">User not saved because it is empty</string>
+
+</resources>
