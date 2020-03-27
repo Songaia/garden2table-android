@@ -1,4 +1,4 @@
-package club.gardentotable.signup
+package club.gardentotable.signup.db
 
 import android.content.Context
 import androidx.room.Database
@@ -10,7 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @Database(entities = [User::class], version = 1, exportSchema = false)
-public abstract class UserRoomDatabase : RoomDatabase() {
+abstract class UserRoomDatabase : RoomDatabase() {
 
     abstract fun userDAO(): UserDAO
 

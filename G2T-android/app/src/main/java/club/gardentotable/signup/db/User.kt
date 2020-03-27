@@ -1,4 +1,4 @@
-package club.gardentotable.signup
+package club.gardentotable.signup.db
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

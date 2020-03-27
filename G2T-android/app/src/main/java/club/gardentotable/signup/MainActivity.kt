@@ -5,15 +5,18 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import club.gardentotable.signup.NewUserActivity.Companion.UID
 import club.gardentotable.signup.NewUserActivity.Companion.USER_FIRSTNAME
 import club.gardentotable.signup.NewUserActivity.Companion.USER_INFO
 import club.gardentotable.signup.NewUserActivity.Companion.USER_LASTNAME
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import club.gardentotable.signup.databinding.ActivityMainBinding
+import club.gardentotable.signup.db.User
+import club.gardentotable.signup.ui.UserListAdapter
+import club.gardentotable.signup.ui.UserViewModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,11 +26,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val activityMainBinding : ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
+
         val adapter = UserListAdapter(this)
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        activityMainBinding.recyclerview.adapter = adapter
+        activityMainBinding.recyclerview.layoutManager = LinearLayoutManager(this)
 
         // Get a new or existing ViewModel from the ViewModelProvider.
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
@@ -37,8 +41,8 @@ class MainActivity : AppCompatActivity() {
             users?.let { adapter.setUsers(it) }
         })
 
-        val fab = findViewById<FloatingActionButton>(R.id.fab)
-        fab.setOnClickListener {
+
+        activityMainBinding.fab.setOnClickListener {
             val intent = Intent(this@MainActivity, NewUserActivity::class.java)
             startActivityForResult(intent, newWordActivityRequestCode)
         }

@@ -1,9 +1,12 @@
-package club.gardentotable.signup
+package club.gardentotable.signup.ui
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import club.gardentotable.signup.db.User
+import club.gardentotable.signup.db.UserRepository
+import club.gardentotable.signup.db.UserRoomDatabase
 import kotlinx.coroutines.launch
 
 class UserViewModel(application: Application): AndroidViewModel(application) {
