@@ -20,7 +20,7 @@ import club.gardentotable.signup.ui.UserViewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private val newWordActivityRequestCode = 1
+    private val newUserActivityRequestCode = 1
     private lateinit var userViewModel: UserViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,14 +44,15 @@ class MainActivity : AppCompatActivity() {
 
         activityMainBinding.fab.setOnClickListener {
             val intent = Intent(this@MainActivity, NewUserActivity::class.java)
-            startActivityForResult(intent, newWordActivityRequestCode)
+            startActivityForResult(intent, newUserActivityRequestCode)
         }
     }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, intentData: Intent?) {
         super.onActivityResult(requestCode, resultCode, intentData)
 
-        if (requestCode == newWordActivityRequestCode && resultCode == Activity.RESULT_OK) {
+        if (requestCode == newUserActivityRequestCode && resultCode == Activity.RESULT_OK) {
             intentData?.getBundleExtra(USER_INFO)?.let { info ->
 
                 val user = User(

@@ -3,14 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <variable
-            name="recyclerview"
-            type="androidx.recyclerview.widget.RecyclerView" />
-        <variable
-            name="fab"
-            type="com.google.android.material.floatingactionbutton.FloatingActionButton" />
-    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

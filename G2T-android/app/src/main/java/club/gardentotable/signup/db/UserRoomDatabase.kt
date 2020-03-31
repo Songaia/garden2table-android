@@ -60,6 +60,8 @@ abstract class UserRoomDatabase : RoomDatabase() {
                 userDao.insert(user)
                 user = User(1, "James", "Joyce")
                 userDao.insert(user)
+
+
                 //TODO: add more users
             }
         }

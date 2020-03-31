@@ -2,20 +2,6 @@
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <data>
-        <variable
-            name="editUserFirstname"
-            type="android.widget.EditText" />
-        <variable
-            name="editUserLastname"
-            type="android.widget.EditText" />
-        <variable
-            name="editUserId"
-            type="android.widget.EditText" />
-        <variable
-            name="buttonSave"
-            type="android.widget.Button" />
-    </data>
 
     <LinearLayout
         android:orientation="vertical"
